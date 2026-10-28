@@ -1,5 +1,5 @@
 # Graphite by Sumr — one-line installer
-#   irm <url-to-this-file> | iex
+#   irm https://raw.githubusercontent.com/sumrzao/graphite/main/install.ps1 | iex
 #
 # Downloads Graphite, installs it to %LOCALAPPDATA%\Graphite\app, adds a Start menu
 # shortcut and starts it (Windows shows the usual administrator prompt).
@@ -9,8 +9,8 @@
     $ErrorActionPreference = 'Stop'
     $ProgressPreference = 'SilentlyContinue'   # the progress bar makes downloads ~10x slower in Windows PowerShell
 
-    # ---- where the release lives (set once when the download link is known) ----
-    $Url = 'https://github.com/YOUR-GITHUB-NAME/graphite/releases/latest/download/Graphite-win-x64.zip'
+    # ---- where the release lives: the newest GitHub release's Graphite-win-x64.zip ----
+    $Url = 'https://github.com/sumrzao/graphite/releases/latest/download/Graphite-win-x64.zip'
     if ($env:GRAPHITE_URL) { $Url = $env:GRAPHITE_URL }
     $Dir = if ($env:GRAPHITE_DIR) { $env:GRAPHITE_DIR } else { Join-Path $env:LOCALAPPDATA 'Graphite\app' }
 
